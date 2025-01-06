@@ -1,81 +1,84 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider     = "mysql"
-  url          = env("DATABASE_URL")
-  relationMode = "prisma"
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
 }
 
+// Issue Model
 model Issue {
-  id               Int      @id @default(autoincrement())
-  title            String   @db.VarChar(255) // varchar(191) is default
-  description      String   @db.Text
-  status           Status   @default(OPEN)
+  id               String   @id @default(auto()) @map("_id") @db.ObjectId
+  title            String   @db.String
+  description      String   @db.String
+  status           Status
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
-  assignedToUserId String?  @db.VarChar(255)
-  assignedToUser   User?    @relation(fields: [assignedToUserId], references: [id])
+  assignedToUser   User?    @relation("UserIssues", fields: [assignedToUserId], references: [id])
+  assignedToUserId String?  @db.ObjectId
 }
 
+// Enum for Status
 enum Status {
   OPEN
   IN_PROGRESS
   CLOSED
 }
 
+// Account Model
 model Account {
-  id                String  @id @default(cuid())
-  userId            String  @map("user_id")
-  type              String
-  provider          String
-  providerAccountId String  @map("provider_account_id")
-  refresh_token     String? @db.Text
-  access_token      String? @db.Text
+  id                String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId            String  @db.ObjectId
+  type              String  @db.String
+  provider          String  @db.String
+  providerAccountId String  @db.String
+  refresh_token     String? @db.String
+  access_token      String? @db.String
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String? @db.Text
+  id_token          String? @db.String
   session_state     String?
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id])
 
-  @@unique([provider, providerAccountId])
+  @@index([provider, providerAccountId], map: "provider_account_unique")
   @@map("accounts")
 }
 
+// Session Model
 model Session {
-  id           String   @id @default(cuid())
-  sessionToken String   @unique @map("session_token")
-  userId       String   @map("user_id")
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  sessionToken String   @unique @db.String
+  userId       String   @db.ObjectId
   expires      DateTime
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user         User     @relation(fields: [userId], references: [id])
 
   @@map("sessions")
 }
 
+// User Model
 model User {
-  id             String    @id @default(cuid())
-  name           String?
-  email          String?   @unique
-  emailVerified  DateTime? @map("email_verified")
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  name           String?   @db.String
+  email          String?   @unique @db.String
+  emailVerified  DateTime?
   image          String?
   accounts       Account[]
   sessions       Session[]
-  assignedIssues Issue[]
+  assignedIssues Issue[]   @relation("UserIssues") // Relation defined here
 
   @@map("users")
 }
 
+// Verification Token Model
 model VerificationToken {
-  identifier String
-  token      String
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  identifier String   @db.String
+  token      String   @db.String
   expires    DateTime
 
-  @@unique([identifier, token])
+  @@index([identifier, token], map: "identifier_token_unique")
   @@map("verificationtokens")
 }

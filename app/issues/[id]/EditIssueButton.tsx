@@ -3,7 +3,7 @@ import { Button } from "@radix-ui/themes";
 import Link from "next/link";
 
 interface Props {
-  issueId: number;
+  issueId: string;
 }
 
 const EditIssueButton = ({ issueId }: Props) => {
