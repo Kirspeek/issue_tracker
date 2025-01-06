@@ -1,21 +1,11 @@
 import prisma from "@/prisma/client";
 import { NextRequest, NextResponse } from "next/server";
-import { ObjectId } from "mongodb";
-
-// Helper to validate ObjectId
-function isValidObjectId(id: string): boolean {
-  return ObjectId.isValid(id);
-}
 
 // GET Issue by ID
 export async function GET(
   request: NextRequest,
   { params }: { params: { id: string } }
 ) {
-  if (!isValidObjectId(params.id)) {
-    return NextResponse.json({ error: "Invalid issue ID." }, { status: 400 });
-  }
-
   try {
     const issue = await prisma.issue.findUnique({
       where: { id: params.id },
@@ -40,10 +30,6 @@ export async function PATCH(
   request: NextRequest,
   { params }: { params: { id: string } }
 ) {
-  if (!isValidObjectId(params.id)) {
-    return NextResponse.json({ error: "Invalid issue ID." }, { status: 400 });
-  }
-
   try {
     const body = await request.json();
 
@@ -67,10 +53,6 @@ export async function DELETE(
   request: NextRequest,
   { params }: { params: { id: string } }
 ) {
-  if (!isValidObjectId(params.id)) {
-    return NextResponse.json({ error: "Invalid issue ID." }, { status: 400 });
-  }
-
   try {
     const deletedIssue = await prisma.issue.delete({
       where: { id: params.id },
