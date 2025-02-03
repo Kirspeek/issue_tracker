@@ -5,12 +5,8 @@
   <h3 align="center">Issue Tracker</h3>
 
   <p align="center">
-.
     <a href="https://kirs-peek-issue-tracker.vercel.app" target="_blank">View Website</a>
     ·
-=======
-   .
-
     <a href="https://github.com/Kirspeek/issue-tracker">Code</a>
   </p>
 </div>
@@ -20,11 +16,7 @@
 ## About The Project
 
 <div align="center">
-<<<<<<< HEAD
   <a href="https://kirs-peek-issue-tracker.vercel.app">
-=======
-.
->>>>>>> f25775c (Initial commit for issue-tracker)
     <img src="app/assets/IssueTrackerGif_20s.gif" alt="Issue Tracker Demo">
   </a>
 </div>
@@ -70,7 +62,7 @@ After setting up, you can start managing issues by creating new ones, editing ex
 
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -78,21 +70,16 @@ Contributions are what make the open source community such an amazing place to l
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<<<<<<< HEAD
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-=======
->>>>>>> f25775c (Initial commit for issue-tracker)
 ## Contact
 
 Iryna - [LinkedIn](https://www.linkedin.com/in/irynacherepenko/)
 
-<<<<<<< HEAD
-Project Link: [https://github.com/Kirspeek/issue-tracker](https://github.com/Kirs-peek/issue-tracker)
-=======
 Project Link: [https://github.com/Kirspeek/issue-tracker](https://github.com/Kirspeek/issue-tracker)
->>>>>>> f25775c (Initial commit for issue-tracker)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+
