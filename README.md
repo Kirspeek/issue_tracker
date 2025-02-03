@@ -5,8 +5,6 @@
   <h3 align="center">Issue Tracker</h3>
 
   <p align="center">
-    <a href="https://kirs-peek-issue-tracker.vercel.app" target="_blank">View Website</a>
-    ·
     <a href="https://github.com/Kirspeek/issue-tracker">Code</a>
   </p>
 </div>
