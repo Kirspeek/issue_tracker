@@ -3,7 +3,11 @@ import { Button } from "@radix-ui/themes";
 import Link from "next/link";
 
 interface Props {
+<<<<<<< HEAD
   issueId: string;
+=======
+  issueId: number;
+>>>>>>> f25775c (Initial commit for issue-tracker)
 }
 
 const EditIssueButton = ({ issueId }: Props) => {

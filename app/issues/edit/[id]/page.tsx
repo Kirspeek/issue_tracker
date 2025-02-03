@@ -15,7 +15,11 @@ interface Props {
 
 const EditIssuePage = async ({ params }: Props) => {
   const issue = await prisma.issue.findUnique({
+<<<<<<< HEAD
     where: { id: params.id }, // Pass `params.id` directly as it is a string
+=======
+    where: { id: parseInt(params.id) },
+>>>>>>> f25775c (Initial commit for issue-tracker)
   });
 
   if (!issue) notFound();

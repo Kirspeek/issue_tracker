@@ -9,7 +9,11 @@ const LatestIssues = async () => {
     orderBy: { createdAt: "desc" },
     take: 5,
     include: {
+<<<<<<< HEAD
       assignedTo: true,
+=======
+      assignedToUser: true,
+>>>>>>> f25775c (Initial commit for issue-tracker)
     },
   });
 
@@ -29,9 +33,15 @@ const LatestIssues = async () => {
                     <IssueStatusBadge status={issue.status} />
                   </Flex>
 
+<<<<<<< HEAD
                   {issue.assignedTo && (
                     <Avatar
                       src={issue.assignedTo.image || undefined}
+=======
+                  {issue.assignedToUser && (
+                    <Avatar
+                      src={issue.assignedToUser.image!}
+>>>>>>> f25775c (Initial commit for issue-tracker)
                       fallback="?"
                       size="2"
                       radius="full"

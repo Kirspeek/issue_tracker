@@ -24,7 +24,13 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+<<<<<<< HEAD
 
+=======
+# local env files
+.env*.local
+.env
+>>>>>>> f25775c (Initial commit for issue-tracker)
 
 # vercel
 .vercel
@@ -35,4 +41,7 @@ next-env.d.ts
 
 # Sentry Config File
 .env.sentry-build-plugin
+<<<<<<< HEAD
 .env
+=======
+>>>>>>> f25775c (Initial commit for issue-tracker)
