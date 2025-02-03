@@ -5,7 +5,7 @@
   <h3 align="center">Issue Tracker</h3>
 
   <p align="center">
-    <a href="https://github.com/Kirspeek/issue-tracker">Code</a>
+    <a href="https://github.com/Kirspeek/issue_tracker">Code</a>
   </p>
 </div>
 
