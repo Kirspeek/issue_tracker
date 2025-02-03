@@ -5,12 +5,12 @@
   <h3 align="center">Issue Tracker</h3>
 
   <p align="center">
-<<<<<<< HEAD
+.
     <a href="https://kirs-peek-issue-tracker.vercel.app" target="_blank">View Website</a>
     ·
 =======
    .
->>>>>>> f25775c (Initial commit for issue-tracker)
+
     <a href="https://github.com/Kirspeek/issue-tracker">Code</a>
   </p>
 </div>
